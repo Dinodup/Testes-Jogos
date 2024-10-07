@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #3b2b59;
+    background-color: #2a1e4f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +13,19 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.container {
+    background-color: #4f3b71;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Ajustado para 8 colunas */
+    grid-template-columns: repeat(6, 4fr);
     gap: 10px;
     padding: 20px;
     background-color: #4f3b71;
@@ -42,6 +52,89 @@ button:active {
 }
 
 .delete {
-    grid-column: span 2;    /* Ocupa 2 colunas na grid */
-    width: auto;            /* Permite que a largura seja ajustada conforme o grid */
+    grid-column: span 2;
+    width: auto;
+}
+
+.info-section {
+    background-color: #674085;
+    padding: 10px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.info-btn {
+    background-color: #7d63a3;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+.info-btn:hover {
+    background-color: #a389d4;
+}
+
+.display-area {
+    background-color: #3d215c;
+    height: 380px;
+    margin-top: 35px;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4f3b71;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #7d63a3;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.submit-btn {
+    background-color: #7d63a3;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #a389d4;
 }

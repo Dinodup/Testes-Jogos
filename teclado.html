@@ -3,35 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teclado Matemático</title>
-    <link rel="stylesheet" href="teclado.css">
+    <title>Teclado Matemático e Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #2a1e4f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #4f3b71;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px; /* Limita a largura máxima para telas grandes */
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            padding: 20px;
+            background-color: #4f3b71;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 100%; /* Adapta a largura ao espaço disponível */
+            height: 60px;
+            font-size: 1.5rem;
+            background-color: #7d63a3;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a389d4;
+        }
+
+        button:active {
+            background-color: #5a4271;
+        }
+
+        .delete {
+            grid-column: span 2;
+            width: auto;
+        }
+
+        .info-section {
+            background-color: #674085;
+            padding: 10px;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 5px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .info-btn {
+            background-color: #7d63a3;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .info-btn:hover {
+            background-color: #a389d4;
+        }
+
+        .display-area {
+            background-color: #3d215c;
+            height: 100%;
+            margin-top: 35px;
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            word-wrap: break-word;
+        }
+
+        .input-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #4f3b71;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        label {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #7d63a3;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .submit-btn {
+            background-color: #7d63a3;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #a389d4;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .keyboard {
+                grid-template-columns: repeat(4, 1fr); /* Ajusta para 4 colunas em telas menores */
+            }
+
+            .info-section {
+                height: auto; /* Deixa a altura da seção de informações adaptável */
+            }
+
+            .container {
+                width: 100%; /* Ajusta para usar 100% da tela em dispositivos menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .keyboard {
+                grid-template-columns: repeat(3, 1fr); /* Ajusta para 3 colunas em telas muito pequenas */
+            }
+
+            button {
+                font-size: 1.2rem; /* Reduz o tamanho do texto dos botões em telas menores */
+                height: 50px;
+            }
+
+            .info-btn {
+                width: 20px;
+                height: 20px;
+            }
+
+            .submit-btn {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="keyboard">
-        <button>0</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>÷</button>
-        <button>^</button>
-        <button>√</button>
-        <button>log</button>
-        <button>sen</button>
-        <button>cos</button>
-        <button>tan</button>
-        <button>π</button>
-        <button>!</button>
-        <button class="delete">⌫</button>
+    <div class="container">
+        
+
+        <!-- Seção da interface -->
+        <div class="info-section">
+            <div class="buttons">
+                <button class="info-btn" id="btn1">1</button>
+                <button class="info-btn" id="btn2">2</button>
+                <button class="info-btn" id="btn3">3</button>
+            </div>
+            <div class="display-area" id="display-area"></div>
+        </div>
+        
+        <div class="input-section">
+            <label for="response-input">R:</label>
+            <input type="text" id="response-input" placeholder="Digite aqui...">
+            <button class="submit-btn" id="submit-btn">✔</button>
+        </div>
+        
+        <!-- Seção do teclado -->
+        <div class="keyboard">
+            <button data-value="0">0</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="+">+</button>
+            <button data-value="-">-</button>
+            <button data-value="*">*</button>
+            <button data-value="÷">÷</button>
+            <button data-value="^">^</button>
+            <button data-value="√">√</button>
+            <button data-value="log">log</button>
+            <button data-value="sen">sen</button>
+            <button data-value="cos">cos</button>
+            <button data-value="tan">tan</button>
+            <button data-value="π">π</button>
+            <button data-value="!">!</button>
+            <button class="delete">⌫</button>
+        </div>
     </div>
-    
+
+    <script src="dicas.js"></script>
 </body>
 </html>
