@@ -1,0 +1,119 @@
+/* Reset básico para garantir margem e preenchimento padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização básica do corpo, centralizando o conteúdo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c2d;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal do jogo */
+.game-container {
+    text-align: center;
+}
+
+/* Título do jogo */
+h1 {
+    color: #b3b3d7;
+    margin-bottom: 20px;
+}
+
+/* Controle dos botões e temporizador */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    color: #fff;
+}
+
+/* Estilização dos botões de reiniciar e voltar */
+button {
+    padding: 10px 20px;
+    background-color: #6c2d91;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Mudança de cor do botão ao passar o mouse */
+button:hover {
+    background-color: #4d2d61;
+}
+
+/* Estilização do temporizador */
+#timer {
+    font-size: 1.2rem;
+}
+
+/* Estilização da grade de cartas, criando uma grade de 4x4 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 140px);
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Estilização das cartas do jogo */
+.card {
+    width: 100px;
+    height: 140px;
+    background-color: #6c2d91;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.6s; /* Suave rotação da carta */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Dando uma perspectiva 3D */
+    position: relative;
+}
+
+/* Oculta o conteúdo da carta até que ela seja virada */
+.card span {
+    backface-visibility: hidden;
+    position: absolute;
+    transform: rotateY(180deg); /* O conteúdo fica escondido até que a carta vire */
+}
+
+/* Quando a carta é virada, ela gira no eixo Y */
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+/* Após virar, o conteúdo da carta fica visível */
+.card.flip span {
+    transform: rotateY(180deg);
+}
+
+/* Cartas inativas */
+.card.inactive {
+    background-color: #333;
+    cursor: default; /* Remove o cursor de interação */
+}
+
+/* Mensagem de fim de jogo */
+#game-over {
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* Esconde elementos, como a tela de game over */
+.hidden {
+    display: none;
+}

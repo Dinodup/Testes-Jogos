@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo - Escolha sua Dificuldade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Matemória</h1>
+        <p>Escolha sua dificuldade:</p>
+        <div class="buttons">
+            <button onclick="selecionarDificuldade('facil')">Fácil</button>
+            <button onclick="selecionarDificuldade('medio')">Médio</button>
+            <button onclick="selecionarDificuldade('dificil')">Difícil</button>
+        </div>
+    </div>
+
+    <script>
+      function selecionarDificuldade(dificuldade) {
+      if (dificuldade === 'facil') {
+        window.location.href = 'matemoria.html';
+      } else if (dificuldade === 'medio') {
+        window.location.href = 'index.html';
+      } else if (dificuldade === 'dificil') {
+        window.location.href = 'index.html';
+      }
+      }
+    </script>
+</body>
+</html>
