@@ -63,7 +63,6 @@
 
         .result-area {
             margin-top: 20px;
-            font-family: ;
         }
         ::-webkit-input-placeholder {
             color: white;
