@@ -1,64 +1,73 @@
 body {
-    font-family: Arial, sans-serif; /* Define a fonte usada na página */
-    text-align: center; /* Centraliza o texto */
-    background-color: #1c1c2d; /* Cor de fundo suave */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #0d0d1a; /* Fundo escuro similar ao exemplo */
     margin: 0;
     padding: 0;
+    color: #fff; /* Texto branco */
 }
 
 .container {
     width: 100%;
-    max-width: 500px; /* Define a largura máxima do container */
-    margin: 100px auto; /* Centraliza o container vertical e horizontalmente */
-    background-color: #b3b3d7; /* Cor de fundo branco para o container */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombra ao redor do container */
+    max-width: 400px; /* Ajuste no tamanho para se aproximar mais da imagem */
+    margin: 50px auto; /* Centralização */
+    padding: 20px;
+    background-color: #23233a; /* Cor de fundo do container */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra similar */
 }
 
 h1 {
-    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .info {
     display: flex;
-    justify-content: space-between; /* Distribui igualmente os elementos nas extremidades */
+    justify-content: space-between;
+    font-size: 16px;
     margin-bottom: 20px;
+    color: #b3b3d7;
 }
 
-.question {
-    font-size: 24px; /* Tamanho da fonte da pergunta */
-    margin-bottom: 20px;
+#question {
+    font-size: 20px;
+    color: #fff;
+    margin: 20px 0;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between; /* Distribui os botões igualmente */
+    justify-content: space-around; /* Ajusta espaçamento */
+    gap: 10px;
 }
 
 .option {
-    background-color: #6c2d91; /* Cor de fundo dos botões */
-    color: white; /* Cor do texto dos botões */
-    border: none; /* Remove a borda padrão dos botões */
-    padding: 15px 30px; /* Define o preenchimento interno dos botões */
-    font-size: 18px; /* Tamanho da fonte dos botões */
-    cursor: pointer; /* Mostra o cursor de "mão" ao passar sobre o botão */
-    border-radius: 5px; /* Bordas arredondadas dos botões */
-    width: 45%; /* Define a largura dos botões */
+    background-color: #6c2d91;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 45%;
+    transition: background-color 0.3s ease;
 }
 
 .option:hover {
-    background-color: #4d2d61; /* Cor ao passar o mouse sobre os botões */
+    background-color: #4d2d61;
 }
 
 #result {
-    margin-top: 20px; /* Espaçamento acima do resultado */
-    font-size: 18px; /* Tamanho da fonte do resultado */
+    margin-top: 20px;
+    font-size: 18px;
 }
 
 #result.success {
-    color: green; /* Cor verde para a mensagem de sucesso */
+    color: green;
 }
 
 #result.fail {
-    color: red; /* Cor vermelha para a mensagem de falha */
+    color: red;
 }

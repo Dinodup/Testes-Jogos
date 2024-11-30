@@ -108,7 +108,7 @@ input {
 }
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Ajustado para 8 colunas */
+    grid-template-columns: repeat(6, 2fr); /* Ajustado para 8 colunas */
     gap: 10px;
     padding: 20px;
     background-color: #4f3b71;

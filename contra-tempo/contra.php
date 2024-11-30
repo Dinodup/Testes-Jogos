@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Jogo de Matemática</h1>
+        <h1>Contra-Tempo</h1>
         <div class="info">
             <span>Nível: <span id="level">1</span> / 10</span>
             <span>Tempo: <span id="timer">0</span>s</span>

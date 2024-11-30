@@ -37,18 +37,12 @@
         <button>7</button>
         <button>8</button>
         <button>9</button>
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>÷</button>
         <button>^</button>
         <button>√</button>
-        <button>log</button>
         <button>sen</button>
         <button>cos</button>
         <button>tan</button>
         <button>π</button>
-        <button>!</button>
         <button class="delete">⌫</button>
     </div>
     </div>
