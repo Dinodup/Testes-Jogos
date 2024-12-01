@@ -1,11 +1,11 @@
-/* Reset básico para garantir margem e preenchimento padrão */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilização básica do corpo, centralizando o conteúdo */
+/* Corpo do site */
 body {
     display: flex;
     justify-content: center;
@@ -15,27 +15,30 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Container principal do jogo */
+/* Container principal */
 .game-container {
     text-align: center;
+    width: 90%;
+    max-width: 600px;
 }
 
-/* Título do jogo */
+/* Título */
 h1 {
-    color: #b3b3d7;
+    color: white;
     margin-bottom: 20px;
 }
 
-/* Controle dos botões e temporizador */
+/* Controles */
 .controls {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     align-items: center;
     color: #fff;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem em dispositivos menores */
 }
 
-/* Estilização dos botões de reiniciar e voltar */
+/* Botões */
 button {
     padding: 10px 20px;
     background-color: #6c2d91;
@@ -44,76 +47,106 @@ button {
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
+    margin: 5px;
 }
 
-/* Mudança de cor do botão ao passar o mouse */
 button:hover {
     background-color: #4d2d61;
 }
 
-/* Estilização do temporizador */
+/* Timer */
 #timer {
     font-size: 1.2rem;
+    flex: 1 100%; /* Garante que o timer ocupe toda a largura quando necessário */
+    text-align: center;
 }
 
-/* Estilização da grade de cartas, criando uma grade de 4x4 */
+/* Grade de cartas */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 140px);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
     justify-content: center;
 }
 
-/* Estilização das cartas do jogo */
+/* Cartas */
 .card {
-    width: 100px;
-    height: 140px;
+    width: 70px;
+    height: 100px;
     background-color: #6c2d91;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.6s; /* Suave rotação da carta */
+    transition: transform 0.6s;
     transform-style: preserve-3d;
-    perspective: 1000px; /* Dando uma perspectiva 3D */
+    perspective: 1000px;
     position: relative;
 }
 
-/* Oculta o conteúdo da carta até que ela seja virada */
+/* Oculta o conteúdo até virar */
 .card span {
     backface-visibility: hidden;
     position: absolute;
-    transform: rotateY(180deg); /* O conteúdo fica escondido até que a carta vire */
-}
-
-/* Quando a carta é virada, ela gira no eixo Y */
-.card.flip {
     transform: rotateY(180deg);
 }
 
-/* Após virar, o conteúdo da carta fica visível */
-.card.flip span {
+/* Quando virada */
+.card.flip {
     transform: rotateY(180deg);
 }
 
 /* Cartas inativas */
 .card.inactive {
     background-color: #333;
-    cursor: default; /* Remove o cursor de interação */
+    cursor: default;
 }
 
-/* Mensagem de fim de jogo */
+/* Fim do jogo */
 #game-over {
     margin-top: 20px;
     color: #fff;
 }
 
-/* Esconde elementos, como a tela de game over */
 .hidden {
     display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid {
+        gap: 10px;
+    }
+
+    .card {
+        width: 60px;
+        height: 80px;
+        font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    #timer {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 50px;
+        height: 70px;
+        font-size: 0.7rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
 }
