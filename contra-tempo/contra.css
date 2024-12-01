@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: white; /* Fundo escuro similar ao exemplo */
+    background-color: #0d0d1a; /* Fundo escuro similar ao exemplo */
     margin: 0;
     padding: 0;
     color: #fff; /* Texto branco */
@@ -28,7 +28,7 @@ h1 {
     justify-content: space-between;
     font-size: 16px;
     margin-bottom: 20px;
-    color: #22264C;
+    color: #b3b3d7;
 }
 
 #question {
