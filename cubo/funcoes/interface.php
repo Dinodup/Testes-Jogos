@@ -206,7 +206,7 @@
                 area: "A = 6a²",
             },
             dados: "Aresta (a) = 5",
-            imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/cubo.png",
+            imagem: "http://localhost/Testes-Jogos/cubo/imagens/cubo.png",
             resposta: 125 // Resposta correta
         },
         {
@@ -216,7 +216,7 @@
                 area: "A = 4πr²",
             },
             dados: "Raio (r) = 3",
-            imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/esfera.png",
+            imagem: "http://localhost/Testes-Jogos/cubo/imagens/esfera.png",
             resposta: (4 * Math.PI * Math.pow(3, 2)).toFixed(2) // Resposta correta
         },
         {
@@ -226,7 +226,7 @@
                 area: "A = 2πr(r + h)",
             },
             dados: "Raio (r) = 2, Altura (h) = 5",
-            imagem: "http://localhost:8080/testes-Jogos/Testes-Jogos/cubo/imagens/cilindro.png",
+            imagem: "http://localhost/Testes-Jogos/cubo/imagens/cilindro.png",
             resposta: (Math.PI * Math.pow(2, 2) * 5).toFixed(2) // Resposta correta
         }
     ];
